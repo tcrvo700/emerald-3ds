@@ -107,6 +107,10 @@ static const OptRowDef sRowsRandom[] = {
     EXTRA_ROW("rand_seed"),
     EXTRA_ROW("rand_new_seed"),
 };
+static const OptRowDef sRowsPkEncounter[] = {
+    EXTRA_ROW("pk_enc"),
+    EXTRA_ROW("pk_species"),
+};
 static const OptRowDef sRowsCatch[] = {
     EXTRA_ROW("encounter_rate"),
     EXTRA_ROW("shiny_odds"),
@@ -147,6 +151,7 @@ static const OptGroupDef sGroupsBattle[] = {
 static const OptGroupDef sGroupsModes[] = {
     GROUP("NUZLOCKE", sRowsNuzlocke),
     GROUP(CTR_TEXT("RANDOMIZER", "ALEATORIO", "ALÉATOIRE", "CASUALE", "ALEATÓRIO", "ZUFALL", "ランダム"), sRowsRandom),
+    GROUP("PK ENCOUNTER", sRowsPkEncounter),
 };
 static const OptGroupDef sGroupsCheats[] = {
     GROUP(CTR_TEXT("CATCHING", "CAPTURA", "CAPTURE", "CATTURA", "CAPTURA", "FANGEN", "ほかく"), sRowsCatch),

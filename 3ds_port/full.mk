@@ -85,6 +85,8 @@ BACKEND_SRCS += src/3ds_rfu_adapter.c
 BACKEND_SRCS += src/3ds_encounter_tables.c
 # The seeded species randomizer, off by default (include/3ds_randomizer.h).
 BACKEND_SRCS += src/3ds_randomizer.c src/3ds_randomizer_core.c
+# PK ENCOUNTER: one chosen Pokemon for every wild encounter (include/3ds_pk_encounter.h).
+BACKEND_SRCS += src/3ds_pk_encounter.c
 # The frame profiler times the engine's own routines through linker wrappers.
 BACKEND_SRCS += src/3ds_prof_wrap.c
 PROF_WRAPPED := RunTasks AnimateSprites BuildOamBuffer ProcessDma3Requests \

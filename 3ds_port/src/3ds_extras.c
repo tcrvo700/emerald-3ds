@@ -8,6 +8,7 @@
 #include "3ds_locale.h"
 #include "3ds_extras.h"
 #include "3ds_randomizer.h"
+#include "3ds_pk_encounter.h"
 #include "3ds_nuzlocke_ui.h"
 #include "3ds_platform.h"
 #include "3ds_daynight.h"
@@ -259,6 +260,7 @@ const CtrExtra gCtrExtras[] =
     {CTR_EXTRAS_SCREEN(CTR_EXTRAS_ENHANCEMENTS, 1), CTR_TEXT("FOLLOWER", "ACOMPAÑANTE", "COMPAGNON", "COMPAGNO", "COMPANHEIRO", "BEGLEITER", "つれあるき"), "follower", 2, 0, gCtrExtrasOffOn, NULL, NULL, NULL},
 #include "3ds_nuzlocke_extras.inc"
 #include "3ds_randomizer_extras.inc"
+#include "3ds_pk_encounter_extras.inc"
     #include "3ds_field_qol_extras.inc"
     {0},
 };

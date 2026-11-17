@@ -18,6 +18,7 @@
 #include "3ds_encounters.h"
 #include "3ds_platform.h"
 #include "3ds_randomizer.h"
+#include "3ds_pk_encounter.h"
 
 /* The core's species ranges are Emerald's. */
 _Static_assert(SPECIES_CELEBI == CTR_RANDOMIZER_SPECIES_LAST_JOHTO, "species layout");
@@ -61,6 +62,10 @@ uint16_t CtrRandomizer_Species(unsigned kind, uint16_t species)
 {
     uint32_t seed;
 
+    /* PK ENCOUNTER (OPTIONS, MODES): while it is ON, every wild Pokemon is the
+     * chosen one; OFF, the game's own (or the randomizer's, if that is on). */
+    if (kind == CTR_RANDOMIZE_WILD && CtrPkEncounter_Enabled())
+        return CtrPkEncounter_Species();
     if (!CtrRandomizer_Enabled(kind))
         return species;
     seed = CtrRandomizer_Seed();
