@@ -18,11 +18,14 @@ jobs:
         run: python3 tools/bootstrap.py --make -j2 --python python3
       - name: Engine-only 3DSX
         run: make -C build/upstream/3ds_port release PYTHON=python3
+      - name: Matching data pack
+        run: make -C build/upstream/3ds_port pak PYTHON=python3
       - name: Collect files
         run: |
           mkdir -p ship
           cp build/upstream/3ds_port/dist/Emerald3DS.3dsx build/upstream/3ds_port/dist/Emerald3DS.smdh ship/
+          cp build/upstream/3ds_port/build/emerald3ds.pak ship/
       - uses: actions/upload-artifact@v4
         with:
-          name: emerald3ds-engine
+          name: emerald3ds-private-build
           path: ship/
